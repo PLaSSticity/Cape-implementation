@@ -12,6 +12,7 @@ To build the code, install llvm-6.0 and run the following commands (root directo
 ```Bash
 cd CAPE_ROOT
 mkdir build
+cd build
 cmake -DLLVM_DIR=/usr/lib/llvm-6.0/cmake .. # assuming llvm-6.0 has been installed in the default location
 make -j
 ```
@@ -25,4 +26,7 @@ clang++ -emit-llvm -c dtree.c -mrtm -O3 -DUSE_TX -fno-use-cxa-atexit -o dtree.bc
 CAPE_ROOT/build/tools/llvm-dg-dump dtree.bc 
 clang++ dtree.bc_ac.ll -O3 -o dtree_cape
 ```
-We also provide a script `analyze.sh` to ease the above procedure.
+We also provide a script `analyze.sh` to ease the above procedure. To use the script to analyze and transform one or more programs, run
+```Bash
+./analyze.sh aes dtree bsearch
+```
