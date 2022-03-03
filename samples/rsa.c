@@ -29,9 +29,6 @@ extern "C" __attribute__((noinline)) size_t multiply(size_t res, size_t x) {
 }
 
 size_t exp() {
-#if !defined(NO_PRELD) && !defined(NO_INST_PRELD)
-    preloadInstAddr(start, length);
-#endif
     unsigned status = 0;
     size_t res = 1;
     for (ssize_t i = 63; i >= 0; --i) {

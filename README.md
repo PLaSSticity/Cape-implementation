@@ -25,7 +25,7 @@ clang++-6.0 -emit-llvm -c dtree.c -mrtm -O3 -DUSE_TX -fno-use-cxa-atexit -o dtre
 CAPE_ROOT/build/tools/llvm-dg-dump dtree.bc 
 clang++-6.0 dtree.bc_ac.ll -O3 -o dtree_cape
 ```
-We also provide a script `analyze.sh` to ease the above procedure. To use the script to analyze and transform one or more programs, run
+We also provide a script `analyze.sh` to ease the above procedure. To use the script to analyze and transform one or more programs (for example, `aes` and `dtree`), run
 ```Bash
-./analyze.sh aes dtree bsearch
+./analyze.sh aes dtree
 ```
